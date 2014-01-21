@@ -3,7 +3,7 @@ class Spree::AddOn < ActiveRecord::Base
   #   :expiration_days
 
   belongs_to :product, class_name: 'Spree::Product'  
-  has_one :default_price, -> { where currency: Spree::Config[:currency] }, class_name: 'Spree::AddOnPrice', dependent: :destroy
+  has_one :default_price, -> { where currency: Spree::Config[:currency] }, class_name: 'Spree::AddOnPrice', dependent: :destroy, autosave: true
   
   delegate_belongs_to :default_price, :display_amount, :amount, :amount=, :currency
 
