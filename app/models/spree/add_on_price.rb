@@ -7,7 +7,7 @@ module Spree
 
     before_save :set_default_currency
 
-    attr_accessible :currency, :amount
+    # attr_accessible :currency, :amount
 
     def display_amount
       money
@@ -16,9 +16,10 @@ module Spree
     def money
       Spree::Money.new(amount || 0, { currency: currency })
     end
-
+    
+   
     def price=(price)
-      self.amount = price
+     self.amount = price
     end
 
     private
