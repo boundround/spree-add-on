@@ -2,7 +2,6 @@ module Spree
   class AddOnPrice < ActiveRecord::Base
     belongs_to :add_on, class_name: 'Spree::AddOn'
 
-    validates :add_on, presence: true
     validates :amount, numericality: { greater_than_or_equal_to: 0 }, allow_nil: true
 
     before_save :set_default_currency

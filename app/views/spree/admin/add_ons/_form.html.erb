@@ -1,6 +1,7 @@
 <div data-hook="admin_image_form_fields">
   <div class="eight columns alpha">
     <div data-hook="name" class="field">
+      <%= f.object.errors.full_messages.to_sentence %>
       <%= f.label Spree::AddOn.human_attribute_name(:name) %>
       <%= f.text_field :name, class: 'fullwidth' %>
       <%= f.label Spree::AddOn.human_attribute_name(:expiration_days) %>
