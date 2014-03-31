@@ -6,7 +6,7 @@ module Spree
     has_many :add_ons, through: :line_item_add_ons
 
     after_create :add_default_add_ons
-    attr_accessible :add_on_ids
+    # attr_accessible :add_on_ids
 
     meta = {
       mode: 'strict',

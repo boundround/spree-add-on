@@ -7,7 +7,7 @@ module Spree
 
     before_save :set_default_currency
 
-    attr_accessible :currency, :amount
+    # attr_accessible :currency, :amount
 
     def display_amount
       money
