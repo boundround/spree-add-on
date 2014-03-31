@@ -2,7 +2,7 @@
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'spree_add_on'
-  s.version     = '1.3.4'
+  s.version     = '1.3.5'
   s.summary     = 'Product add-ons.'
   s.required_ruby_version = '>= 1.9.3'
 
