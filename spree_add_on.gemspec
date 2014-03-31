@@ -2,7 +2,7 @@
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'spree_add_on'
-  s.version     = '1.3.5'
+  s.version     = '1.3.6'
   s.summary     = 'Product add-ons.'
   s.required_ruby_version = '>= 1.9.3'
 
@@ -18,11 +18,12 @@ Gem::Specification.new do |s|
 
   s.add_development_dependency 'capybara', '~> 2.1'
   s.add_development_dependency 'coffee-rails'
-  s.add_development_dependency 'database_cleaner', '<= 1.0.1'
+  s.add_development_dependency 'database_cleaner'
   s.add_development_dependency 'factory_girl', '~> 4.2'
   s.add_development_dependency 'ffaker'
   s.add_development_dependency 'rspec-rails',  '~> 2.13'
   s.add_development_dependency 'sass-rails'
+  s.add_development_dependency 'selenium-webdriver'
   s.add_development_dependency 'simplecov'
   s.add_development_dependency 'sqlite3'
 end

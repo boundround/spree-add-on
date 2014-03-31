@@ -6,6 +6,7 @@ module SpreeAddOn
 
       def add_javascripts
         append_file 'app/assets/javascripts/admin/all.js', "//= require admin/spree_add_on\n"
+        append_file 'app/assets/javascripts/store/all.js', "//= require store/spree_add_on\n"
       end
 
       def add_stylesheets

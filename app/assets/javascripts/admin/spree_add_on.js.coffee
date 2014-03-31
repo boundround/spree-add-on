@@ -1,3 +1,4 @@
+//= require select2
 $ ->
   $("#new-add-on-link").click (event)->
     event.preventDefault()

@@ -1,11 +1,14 @@
 <div data-hook="admin_image_form_fields">
   <div class="eight columns alpha">
     <div data-hook="name" class="field">
+      <%= f.object.errors.full_messages.to_sentence %>
       <%= f.label Spree::AddOn.human_attribute_name(:name) %>
       <%= f.text_field :name, class: 'fullwidth' %>
       <%= f.label Spree::AddOn.human_attribute_name(:expiration_days) %>
       <%= f.text_field :expiration_days, class: 'fullwidth' %>
-
+      <%= f.label Spree::AddOn.human_attribute_name(:price) %>
+      <%= f.text_field :amount, :value => number_to_currency(f.object.amount, :unit => ''), class: 'fullwidth' %>
+      
     </div>
   </div>
   <div class="four columns omega">

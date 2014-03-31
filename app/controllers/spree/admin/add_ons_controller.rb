@@ -7,6 +7,9 @@ module Spree
         @add_ons = @product.add_ons
         respond_with(@add_ons)
       end
+      
+
+
     end
   end
 end
