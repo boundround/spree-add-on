@@ -1,4 +1,4 @@
-<% if item.variant.product.add_on? %>
+<% if item.variant.product.add_ons? %>
   <%= render 'spree/add_ons/add_on_description_modal', add_on: item.add_ons.first %>
 <% else %>
   <div>
