@@ -1,4 +1,4 @@
-<% if line_item.variant.product.add_ons? %>
+<% if line_item.variant.product.add_ons.present?  %>
   <%= line_item.name %>
 <% else %>
   <%= link_to line_item.name, product_path(line_item.variant.product) %>
