@@ -5,7 +5,8 @@
       <%= f.text_field :name, class: 'fullwidth' %>
       <%= f.label Spree::AddOn.human_attribute_name(:expiration_days) %>
       <%= f.text_field :expiration_days, class: 'fullwidth' %>
-
+      <%= f.label Spree::AddOn.human_attribute_name(:embroidery_options) %>
+      <%= f.text_field :embroidery_options, class: 'fullwidth' %>
     </div>
   </div>
   <div class="four columns omega">
@@ -13,6 +14,14 @@
       <%= f.label :default, class: 'checkbox' do %>
         <%= Spree::AddOn.human_attribute_name(:default) %>
         <%= f.check_box :default %>
+      <% end %>
+    </div>
+  </div>
+  <div class="four columns omega">
+    <div data-hook="default" class="field checkbox">
+      <%= f.label :show_embroidery, class: 'checkbox' do %>
+        <%= Spree::AddOn.human_attribute_name(:show_embroidery) %>
+        <%= f.check_box :show_embroidery %>
       <% end %>
     </div>
   </div>
