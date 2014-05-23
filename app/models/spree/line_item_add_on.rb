@@ -7,7 +7,7 @@ class Spree::LineItemAddOn < ActiveRecord::Base
   delegate :expiration_days, to: :add_on
 
   after_create :set_price_and_expiration_date
-
+  
   def expired?
     return false unless add_on.expiration_days
 
@@ -33,4 +33,5 @@ class Spree::LineItemAddOn < ActiveRecord::Base
   def currency
     self.line_item.order.currency
   end
+  
 end
