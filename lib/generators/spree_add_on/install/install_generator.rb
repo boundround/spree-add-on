@@ -5,13 +5,21 @@ module SpreeAddOn
       class_option :auto_run_migrations, type: :boolean, default: false
 
       def add_javascripts
-        append_file 'app/assets/javascripts/admin/all.js', "//= require admin/spree_add_on\n"
-        append_file 'app/assets/javascripts/store/all.js', "//= require store/spree_add_on\n"
+        if File.exists? 'app/assets/javascripts/admin/all.js'
+          append_file 'app/assets/javascripts/admin/all.js', "//= require admin/spree_add_on\n"
+        end
+        if File.exists? 'app/assets/javascripts/store/all.js'
+          append_file 'app/assets/javascripts/store/all.js', "//= require store/spree_add_on\n"
+        end
       end
 
       def add_stylesheets
-        inject_into_file 'app/assets/stylesheets/admin/all.css', " *= require admin/spree_add_on\n", before: /\*\//, verbose: true
-        inject_into_file 'app/assets/stylesheets/store/all.css', " *= require store/spree_add_on\n", before: /\*\//, verbose: true
+        if File.exists? 'app/assets/stylesheets/admin/all.css'
+          inject_into_file 'app/assets/stylesheets/admin/all.css', " *= require admin/spree_add_on\n", before: /\*\//, verbose: true
+        end
+        if File.exists? 'app/assets/stylesheets/admin/all.css'
+          inject_into_file 'app/assets/stylesheets/admin/all.css', " *= require store/spree_add_on\n", before: /\*\//, verbose: true
+        end
       end
 
       def add_migrations
