@@ -1,10 +1,10 @@
 class Spree::AddOn < ActiveRecord::Base
   # attr_accessible :description, :name, :type, :default, :prices_attributes, :expiration_days, :default_price
 
-  belongs_to :product, class_name: 'Spree::Product'  
+  belongs_to :product, class_name: 'Spree::Product'
   has_one :default_price, -> { where currency: Spree::Config[:currency] }, class_name: 'Spree::AddOnPrice', dependent: :destroy, autosave: true
-  
-  delegate_belongs_to :default_price, :display_amount, :amount, :amount=, :currency
+
+  delegate :default_price, :display_amount, :amount, :amount=, :currency, to: :product
 
   has_many :prices,
     class_name: 'Spree::AddOnPrice',
